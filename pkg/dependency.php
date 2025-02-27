@@ -6,6 +6,6 @@ return [
   ],
   'css' => [
     NODE . '/@picocss/pico/css/pico.min.css',
-    //$PATH . '/style.css',
+    $PATH . '/style.css',
   ],
 ];

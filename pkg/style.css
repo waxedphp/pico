@@ -1,0 +1,459 @@
+/*
+  Simple Grid
+  Project Page - http://thisisdallas.github.com/Simple-Grid/
+  Author - Dallas Bass
+  Site - http://dallasbass.com
+*/
+
+
+[class*='sg-grid'],
+[class*='sg-col-'],
+[class*='sg-mobile-'],
+.sg-grid:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+[class*='sg-col-'] {
+	float: left;
+  	min-height: 1px;
+	padding-right: 20px; /* column-space */
+}
+
+[class*='sg-col-'] [class*='sg-col-']:last-child {
+	padding-right: 0;
+}
+
+.sg-clr {
+  clear:both;
+}
+.sg-clr:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.sg-grid {
+	width: 100%;
+	max-width: 1140px;
+	min-width: 748px; /* when using padded grid on ipad in portrait mode, width should be viewport-width - padding = (768 - 20) = 748. actually, it should be even smaller to allow for padding of grid containing element */
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.sg-grid:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.sg-grid-pad {
+	padding-top: 20px;
+	padding-left: 20px; /* grid-space to left */
+	padding-right: 0; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
+}
+
+.sg-push-right {
+	float: right;
+}
+
+/* Content Columns */
+
+.sg-col-1-1 {
+	width: 100%;
+}
+.sg-col-2-3, .sg-col-8-12 {
+	width: 66.66%;
+}
+
+.sg-col-1-2, .sg-col-6-12 {
+	width: 50%;
+}
+
+.sg-col-1-3, .sg-col-4-12 {
+	width: 33.33%;
+}
+
+.sg-col-1-4, .sg-col-3-12 {
+	width: 25%;
+}
+
+.sg-col-1-5 {
+	width: 20%;
+}
+
+.sg-col-1-6, .sg-col-2-12 {
+	width: 16.667%;
+}
+
+.sg-col-1-7 {
+	width: 14.28%;
+}
+
+.sg-col-1-8 {
+	width: 12.5%;
+}
+
+.sg-col-1-9 {
+	width: 11.1%;
+}
+
+.sg-col-1-10 {
+	width: 10%;
+}
+
+.sg-col-1-11 {
+	width: 9.09%;
+}
+
+.sg-col-1-12 {
+	width: 8.33%
+}
+
+/* Layout Columns */
+
+.sg-col-11-12 {
+	width: 91.66%
+}
+
+.sg-col-10-12 {
+	width: 83.333%;
+}
+
+.sg-col-9-12 {
+	width: 75%;
+}
+
+.sg-col-5-12 {
+	width: 41.66%;
+}
+
+.sg-col-7-12 {
+	width: 58.33%
+}
+
+/* Pushing blocks */
+
+.sg-push-2-3, .sg-push-8-12 {
+	margin-left: 66.66%;
+}
+
+.sg-push-1-2, .sg-push-6-12 {
+	margin-left: 50%;
+}
+
+.sg-push-1-3, .sg-push-4-12 {
+	margin-left: 33.33%;
+}
+
+.sg-push-1-4, .sg-push-3-12 {
+	margin-left: 25%;
+}
+
+.sg-push-1-5 {
+	margin-left: 20%;
+}
+
+.sg-push-1-6, .sg-push-2-12 {
+	margin-left: 16.667%;
+}
+
+.sg-push-1-7 {
+	margin-left: 14.28%;
+}
+
+.sg-push-1-8 {
+	margin-left: 12.5%;
+}
+
+.sg-push-1-9 {
+	margin-left: 11.1%;
+}
+
+.sg-push-1-10 {
+	margin-left: 10%;
+}
+
+.sg-push-1-11 {
+	margin-left: 9.09%;
+}
+
+.sg-push-1-12 {
+	margin-left: 8.33%
+}
+
+@media handheld, only screen and (max-width: 767px) {
+	.sg-grid {
+		width: 100%;
+		min-width: 0;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 20px; /* grid-space to left */
+		padding-right: 10px; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-10px=10px */
+	}
+
+	[class*='sg-col-'] {
+		width: auto;
+		float: none;
+		margin: 10px 0;
+		padding-left: 0;
+		padding-right: 10px; /* column-space */
+	}
+
+	[class*='sg-col-'] [class*='sg-col-'] {
+		padding-right: 0;
+	}
+
+	/* Mobile Layout */
+
+	[class*='sg-mobile-col-'] {
+		float: left;
+		margin: 0 0 10px;
+		padding-left: 0;
+		padding-right: 10px; /* column-space */
+		padding-bottom: 0;
+	}
+
+	.sg-mobile-col-1-1 {
+		width: 100%;
+	}
+	.sg-mobile-col-2-3, .sg-mobile-col-8-12 {
+		width: 66.66%;
+	}
+
+	.sg-mobile-col-1-2, .sg-mobile-col-6-12 {
+		width: 50%;
+	}
+
+	.sg-mobile-col-1-3, .sg-mobile-col-4-12 {
+		width: 33.33%;
+	}
+
+	.sg-mobile-col-1-4, .sg-mobile-col-3-12 {
+		width: 25%;
+	}
+
+	.sg-mobile-col-1-5 {
+		width: 20%;
+	}
+
+	.sg-mobile-col-1-6, .sg-mobile-col-2-12 {
+		width: 16.667%;
+	}
+
+	.sg-mobile-col-1-7 {
+		width: 14.28%;
+	}
+
+	.sg-mobile-col-1-8 {
+		width: 12.5%;
+	}
+
+	.sg-mobile-col-1-9 {
+		width: 11.1%;
+	}
+
+	.sg-mobile-col-1-10 {
+		width: 10%;
+	}
+
+	.sg-mobile-col-1-11 {
+		width: 9.09%;
+	}
+
+	.sg-mobile-col-1-12 {
+		width: 8.33%
+	}
+
+	/* Layout Columns */
+
+	.sg-mobile-col-11-12 {
+		width: 91.66%
+	}
+
+	.sg-mobile-col-10-12 {
+		width: 83.333%;
+	}
+
+	.sg-mobile-col-9-12 {
+		width: 75%;
+	}
+
+	.sg-mobile-col-5-12 {
+		width: 41.66%;
+	}
+
+	.sg-mobile-col-7-12 {
+		width: 58.33%
+	}
+
+	.sg-hide-on-mobile {
+		display: none !important;
+		width: 0;
+		height: 0;
+	}
+}
+
+
+
+/* fix pico */
+[type="checkbox"] ~ label:not(:last-of-type), [type="radio"] ~ label:not(:last-of-type) {
+  margin-inline-end: 0!important;
+}
+
+
+.resetElement button,
+.resetElement [role=button]{
+    animation : none;
+    animation-delay : 0;
+    animation-direction : normal;
+    animation-duration : 0;
+    animation-fill-mode : none;
+    animation-iteration-count : 1;
+    animation-name : none;
+    animation-play-state : running;
+    animation-timing-function : ease;
+    backface-visibility : visible;
+    background : 0;
+    background-attachment : scroll;
+    background-clip : border-box;
+    background-color : transparent;
+    background-image : none;
+    background-origin : padding-box;
+    background-position : 0 0;
+    background-position-x : 0;
+    background-position-y : 0;
+    background-repeat : repeat;
+    background-size : auto auto;
+    border : 0;
+    border-style : none;
+    border-width : medium;
+    border-color : inherit;
+    border-bottom : 0;
+    border-bottom-color : inherit;
+    border-bottom-left-radius : 0;
+    border-bottom-right-radius : 0;
+    border-bottom-style : none;
+    border-bottom-width : medium;
+    border-collapse : separate;
+    border-image : none;
+    border-left : 0;
+    border-left-color : inherit;
+    border-left-style : none;
+    border-left-width : medium;
+    border-radius : 0;
+    border-right : 0;
+    border-right-color : inherit;
+    border-right-style : none;
+    border-right-width : medium;
+    border-spacing : 0;
+    border-top : 0;
+    border-top-color : inherit;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border-top-style : none;
+    border-top-width : medium;
+    bottom : auto;
+    box-shadow : none;
+    box-sizing : content-box;
+    caption-side : top;
+    clear : none;
+    clip : auto;
+    color : inherit;
+    columns : auto;
+    column-count : auto;
+    column-fill : balance;
+    column-gap : normal;
+    column-rule : medium none currentColor;
+    column-rule-color : currentColor;
+    column-rule-style : none;
+    column-rule-width : none;
+    column-span : 1;
+    column-width : auto;
+    content : normal;
+    counter-increment : none;
+    counter-reset : none;
+    cursor : auto;
+    direction : ltr;
+    display : inline;
+    empty-cells : show;
+    float : none;
+    font : normal;
+    font-family : inherit;
+    font-size : medium;
+    font-style : normal;
+    font-variant : normal;
+    font-weight : normal;
+    height : auto;
+    hyphens : none;
+    left : auto;
+    letter-spacing : normal;
+    line-height : normal;
+    list-style : none;
+    list-style-image : none;
+    list-style-position : outside;
+    list-style-type : disc;
+    margin : 0;
+    margin-bottom : 0;
+    margin-left : 0;
+    margin-right : 0;
+    margin-top : 0;
+    max-height : none;
+    max-width : none;
+    min-height : 0;
+    min-width : 0;
+    opacity : 1;
+    orphans : 0;
+    outline : 0;
+    outline-color : invert;
+    outline-style : none;
+    outline-width : medium;
+    overflow : visible;
+    overflow-x : visible;
+    overflow-y : visible;
+    padding : 0;
+    padding-bottom : 0;
+    padding-left : 0;
+    padding-right : 0;
+    padding-top : 0;
+    page-break-after : auto;
+    page-break-before : auto;
+    page-break-inside : auto;
+    perspective : none;
+    perspective-origin : 50% 50%;
+    position : static;
+    /* May need to alter quotes for different locales (e.g fr) */
+    quotes : '\201C' '\201D' '\2018' '\2019';
+    right : auto;
+    tab-size : 8;
+    table-layout : auto;
+    text-align : inherit;
+    text-align-last : auto;
+    text-decoration : none;
+    text-decoration-color : inherit;
+    text-decoration-line : none;
+    text-decoration-style : solid;
+    text-indent : 0;
+    text-shadow : none;
+    text-transform : none;
+    top : auto;
+    transform : none;
+    transform-style : flat;
+    transition : none;
+    transition-delay : 0s;
+    transition-duration : 0s;
+    transition-property : none;
+    transition-timing-function : ease;
+    unicode-bidi : normal;
+    vertical-align : baseline;
+    visibility : visible;
+    white-space : normal;
+    widows : 0;
+    width : auto;
+    word-spacing : normal;
+    z-index : auto;
+    /* basic modern patch */
+    all: initial;
+    all: unset;
+}
